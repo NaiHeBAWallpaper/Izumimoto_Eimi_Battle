@@ -44,7 +44,8 @@ const subtitleLocales = {
 	Chinese: 'zh-Hans',
 	TraditionalChinese: 'zh-Hant',
 	Japanese: 'ja',
-	Korean: 'ko'
+	Korean: 'ko',
+	Thai: 'th'
 };
 let isVoicelinePlaying = false;
 
@@ -63,20 +64,21 @@ const AUDIO_DETAIL = [
             ],
             English: [
                 "Welcome, Sensei.",
-                "It’s a bit of a strange sky, isn't it?"
+                "This night sky... It's a bit strange, isn't it?"
             ],
             Chinese: [
                 "欢迎，老师。",
                 "总觉得，这片天空有些不可思议呢。"
             ],
             TraditionalChinese: [
-                "歡迎你，老師！",
-                "總覺得，這片天空有些不可思議呢。"
+                "歡迎你，老師。",
+                "總覺得，這片天空很不可思議呢。"
             ],
             Korean: [
-                "어서 와, 선생님!",
-                "좀 이상한 하늘이야?"
-            ]
+                "어서 와. 선생님",
+                "뭔가, 신비한 밤하늘이지?"
+            ],
+            Thai: ["เชิญเลย คุณครู","เป็นท้องฟ้ากลางคืน ที่แปลกใหม่ดีใช่มั้ย?"]
         }
     },
     {
@@ -87,9 +89,9 @@ const AUDIO_DETAIL = [
                 "今の私みたい。"
             ],
             English: [
-                "It looks like the night sky we know...",
-                "but look closer, and it's nothing like it.",
-                "Much like I am now."
+                "It's the same as the night sky we're familiar with...",
+                "But also completely different in many ways.",
+                "Just like me, right now."
             ],
             Chinese: [
                 "虽然看起来很像我们熟知的夜空……",
@@ -97,15 +99,16 @@ const AUDIO_DETAIL = [
                 "就像现在的我一样。"
             ],
             TraditionalChinese: [
-                "雖然看起來很像我們熟知的夜空……",
-                "但仔細看的話，截然不同。",
+                "跟我們熟悉的夜空有點相似……",
+                "仔細一看，又完全不同。",
                 "就像現在的我一樣。"
             ],
             Korean: [
-                "우리가 아는 밤하늘처럼...",
-                "하지만 좀 더 자세히 보시면, 그 어떤 것도 없습니다.",
-                "지금과 비슷해요"
-            ]
+                "우리가 아는 밤하늘과 비슷하면서도.",
+                "잘 보면, 전혀 달라.",
+                "마치, 지금의 나처럼."
+            ],
+            Thai: ["ทั้งที่มันก็เหมือนกับ ท้องฟ้ายามค่ำคืนที่เรารู้จัก","แต่ถ้ามองดีๆ ก็จะเห็นว่ามันต่างกัน","เหมือนกับฉันในตอนนี้"]
         }
     },
     {
@@ -115,21 +118,22 @@ const AUDIO_DETAIL = [
                 "最近、好きなんだ。"
             ],
             English: [
-                "I never really looked up like this before...",
-                "But lately, I’ve grown to like it."
+                "Until now, I've never...",
+                "...had a reason to look up at the sky."
             ],
             Chinese: [
                 "以前我并不怎么像这样抬头仰望……",
                 "但最近，我很中意这种感觉。"
             ],
             TraditionalChinese: [
-                "以前我並不怎麼像這樣抬頭仰望……",
-                "但最近，我很中意這種感覺。"
+                "雖然以前很少像這樣仰望天空……",
+                "最近，卻還挺喜歡的。"
             ],
             Korean: [
-                "전 이런 모습은 본 적이 없어요",
-                "하지만 최근에, 저는 그것을 좋아하게 되었습니다."
-            ]
+                "지금까지는 이렇게 하늘을 올려다 볼일이 없었는데.",
+                "최근에는, 좋아졌어."
+            ],
+            Thai: ["ที่ผ่านมา ฉันไม่เคย เงยหน้ามองฟ้ามาก่อนเลย...","แต่ตอนนี้ฉันชอบทำบ่อยๆ เลยละ"]
         }
     },
     {
@@ -139,21 +143,22 @@ const AUDIO_DETAIL = [
                 "見上げる度に、先生の顔が浮かぶの。"
             ],
             English: [
-                "I wonder why.",
-                "Every time I look up, your face is what I see."
+                "Recently, I've started to enjoy it.",
+                "But you know... Whenever I look up, I'm reminded of Sensei's face."
             ],
             Chinese: [
                 "但是，为什么呢。",
                 "每当仰望天空时，脑海中总会浮现出老师的脸。"
             ],
             TraditionalChinese: [
-                "……這是為什麼呢？",
-                "每當仰望天空時，腦海中總會浮現出老師的臉。"
+                "不過，不知道為什麼。",
+                "每次抬頭仰望的時候，總是會浮現老師的臉。"
             ],
             Korean: [
-                "……어째서일까요.",
-                "내가 눈을 들어볼 때마다 네 얼굴이 보인다."
-            ]
+                "그런데 어째서일까.",
+                "올려다볼 때마다, 선생님의 얼굴이 떠올라."
+            ],
+            Thai: ["แต่ว่าทำไมกันนะ...","ทุกครั้งที่เงยหน้าขึ้นมอง ก็มักจะนึกถึงหน้าของคุณครู"]
         }
     },
     {
@@ -163,7 +168,7 @@ const AUDIO_DETAIL = [
                 "先生。"
             ],
             English: [
-                "Hehe... I wonder.",
+                "Fufu. I wonder why?",
                 "Sensei."
             ],
             Chinese: [
@@ -171,13 +176,14 @@ const AUDIO_DETAIL = [
                 "老师。"
             ],
             TraditionalChinese: [
-                "呵呵，到底是為什麼呢。",
+                "呵呵，究竟是為什麼呢。",
                 "老師。"
             ],
             Korean: [
-                "궁금해서요",
-                "상사님"
-            ]
+                "후훗. 어째서일까?",
+                "선생님."
+            ],
+            Thai: ["ฮุฮุ เพราะอะไรกันนะ?","คุณครู"]
         }
     },
     {
@@ -187,21 +193,22 @@ const AUDIO_DETAIL = [
                 "うん、本当に。そう、思ってるよ。"
             ],
             English: [
-                "I'm really glad I met you, Sensei.",
-                "Yes... I truly mean it."
+                "I'm really happy I met you.",
+                "Yeah. I really, really am."
             ],
             Chinese: [
                 "我，能遇到老师真是太好了。",
                 "嗯，真的。我是这么想的。"
             ],
             TraditionalChinese: [
-                "我，能遇到老師真是太好了。",
-                "嗯，真的。我是這麼想的。"
+                "我能遇見老師，真是太好了。",
+                "嗯。我真的，是那麼想的哦。"
             ],
             Korean: [
-                "정말 반가워, 선생님",
-                "네, 정말 진지해요"
-            ]
+                "나, 선생님과 만나서, 정말로 좋았던 것 같아.",
+                "응. 진심으로 그렇게 생각해."
+            ],
+            Thai: ["ฉันดีใจจริงๆ ที่ได้เจอกับคุณครูนะ","อื้อ ฉันคิดแบบนั้นจริงๆ นะ"]
         }
     }
 ];
@@ -313,7 +320,7 @@ function playVoiceline() {
 			track.play().catch(finish);
 
 			if (dialogBox) {
-				textbox.textContent = dialog[window.selectedLanguage][index];
+				textbox.textContent = getSubtitleText(dialog, window.selectedLanguage, index);
 				textbox.style.opacity = 1;
 			}
 		},
@@ -488,6 +495,16 @@ function setMouse(event) {
 	return { x: ax - canvas.width * positionX, y: ay - canvas.height * positionY };
 }
 
+function getSubtitleText(dialog, language, index) {
+	let text = dialog?.[language]?.[index];
+	if (text == null && language === 'Thai') {
+		language = 'English';
+		text = dialog?.[language]?.[index];
+	}
+	textbox.lang = subtitleLocales[language];
+	return text ?? "";
+}
+
 function updateSubtitleLanguage() {
 	let language = subtitleLanguagePreference;
 	if (language === 'auto') {
@@ -501,6 +518,8 @@ function updateSubtitleLanguage() {
 			language = 'Japanese';
 		} else if (primary === 'ko' || primary === 'korean' || primary === 'koreana') {
 			language = 'Korean';
+		} else if (primary === 'th' || primary === 'thai') {
+			language = 'Thai';
 		} else {
 			language = 'English';
 		}
@@ -510,7 +529,7 @@ function updateSubtitleLanguage() {
 	window.selectedLanguage = language;
 	textbox.lang = subtitleLocales[language];
 	const clip = currentTracks.at(-1);
-	if (dialogBox && clip) textbox.textContent = clip.dialog[language][clip.index];
+	if (dialogBox && clip) textbox.textContent = getSubtitleText(clip.dialog, language, clip.index);
 }
 
 function init() {
